@@ -13,10 +13,14 @@
    <script>
        let queryURL=" https://dc.fandom.com/api.php?action=query&prop=revisions&titles=Aaron_Helzinger_(New_Earth)&rvprop=content&format=json";
     //    "https://dc.fandom.com/wiki/Aaron_Helzinger_(New_Earth)"
+    try{
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(response => console.log(response));
+    }).then(response => {debugger;console.log(response);});}
+    catch{
+        console.log('failed');
+    }
    </script> 
 </body>
 </html>
