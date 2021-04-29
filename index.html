@@ -6,37 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
 </head>
 <body>
 
 
    <script>
-        const express = require('express');
-        const request = require('request');
-
-        const app = express();
-
-        app.use((req, res, next) => {
-        res.header('Access-Control-Allow-Origin', '*');
-        next();
-        });
-
-        app.get('/random', (req, res) => {
-        request(
-            // { url: 'https://joke-api-strict-cors.appspot.com/jokes/random' },
-            { url: 'https://dc.fandom.com/api.php?action=query&prop=revisions&titles=Aaron_Helzinger_(New_Earth)&rvprop=content&format=json' },
-            (error, response, body) => {
-            if (error || response.statusCode !== 200) {
-                return res.status(500).json({ type: 'error', message: err.message });
-            }
-
-            res.json(JSON.parse(body));
-            }
-        )
-        });
-
-        const PORT = process.env.PORT || 3000;
-        app.listen(PORT, () => console.log(`listening on ${PORT}`));
+        
 
 
     //    let queryURL=" https://dc.fandom.com/api.php?action=query&prop=revisions&titles=Aaron_Helzinger_(New_Earth)&rvprop=content&format=json";
